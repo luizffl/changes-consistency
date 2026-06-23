@@ -3,7 +3,7 @@
   "displayName": "Changes Consistency",
   "description": "Validates that staged git changes match your stated intent - reports missing or extra changes in a standardized table format",
   "version": "1.0.0",
-  "repository": "",
+  "repository": "https://github.com/luizffl/changes-consistency",
   "license": "MIT",
   "author": {
     "name": "Luiz Leite"
