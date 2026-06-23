@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "repository": "",
   "license": "MIT",
+  "keywords": ["code-quality", "code-review", "development", "pre-commit"],
   "author": {
     "name": "Luiz Leite"
   }
