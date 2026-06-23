@@ -1,0 +1,65 @@
+{
+  "skill_name": "changes-consistency",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I expected to add a hello world print in main.js and a placeholder xpto.js. Check if my staged changes match that.",
+      "expected_output": "ALL EXPECTED banner — both files are staged as described.",
+      "files": [],
+      "expectations": [
+        "Output shows the ALL EXPECTED success banner (╔══ CHANGE CONSISTENCY: ALL EXPECTED ══╗)",
+        "No missing changes table is shown",
+        "No extra changes table is shown",
+        "Output does NOT mention discrepancies found"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I was supposed to add main.js with a print statement and xpto.js as a placeholder. Check staged changes.",
+      "expected_output": "DISCREPANCIES FOUND banner with unexpected.js listed as an extra change.",
+      "files": [],
+      "expectations": [
+        "Output shows DISCREPANCIES FOUND banner (╔══ CHANGE CONSISTENCY: DISCREPANCIES FOUND ══╗)",
+        "unexpected.js is listed in the Extra Changes table",
+        "Summary line is present and mentions extra change(s)",
+        "Missing Changes section says None detected"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I planned to add main.js with a hello world print, xpto.js placeholder, AND a config.json with app settings. Verify staged changes.",
+      "expected_output": "DISCREPANCIES FOUND with config.json listed as missing, unexpected.js listed as extra.",
+      "files": [],
+      "expectations": [
+        "Output shows DISCREPANCIES FOUND banner",
+        "config.json is listed in the Missing Changes table",
+        "unexpected.js is listed in the Extra Changes table",
+        "Summary line mentions both missing and extra changes"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I only expected to add main.js with a console.log. Nothing else. Are my staged changes consistent?",
+      "expected_output": "DISCREPANCIES FOUND with xpto.js and unexpected.js listed as extra changes.",
+      "files": [],
+      "expectations": [
+        "Output shows DISCREPANCIES FOUND banner",
+        "xpto.js is listed in the Extra Changes table",
+        "unexpected.js is listed in the Extra Changes table",
+        "Missing Changes section says None detected",
+        "Summary line mentions 2 extra change(s)"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "No staged changes scenario — I haven't staged anything yet. Just run the consistency check.",
+      "expected_output": "Informs the user that no staged changes were found and instructs them to use git add.",
+      "files": [],
+      "expectations": [
+        "Output informs user that no staged changes were found",
+        "Output does NOT show an ALL EXPECTED or DISCREPANCIES FOUND banner",
+        "Output suggests using git add to stage changes"
+      ]
+    }
+  ]
+}
